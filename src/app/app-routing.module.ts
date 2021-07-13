@@ -19,6 +19,15 @@ const routes: Routes = [
             (m) => m.ResultadoApiModule
           ),
       },
+      {
+        path:'table',
+        loadChildren: ()=> import('./tabla/tabla.module').then((m)=>m.TablaModule)
+
+      },
+      {
+        path:'form',
+        loadChildren: ()=> import('./form-new-user/form-new-user.module').then((m)=>m.FormNewUserModule)
+      }
     ],
   },
 ];

@@ -5,6 +5,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -15,13 +18,19 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatAutocompleteModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   exports:[
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatAutocompleteModule,
+    MatTableModule,
+    MatPaginatorModule
   ]
 })
 export class MaterialModule { }

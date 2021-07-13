@@ -10,11 +10,13 @@ import {HttpClientModule} from '@angular/common/http'
 import { CoreModule } from '@core/core.module';
 import { SharedModule } from '@shared/shared.module';
 import { LayoutComponent } from './layout/layout.component';
+
 // modulos
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent
+    LayoutComponent,
+
   ],
   imports: [
     BrowserModule,
