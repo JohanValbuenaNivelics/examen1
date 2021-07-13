@@ -1,0 +1,32 @@
+<mat-card class="dashboard-card">
+  <mat-card-header>
+    <img mat-card-avatar [src]="categoria.icon" alt="icono" />
+    <mat-card-title> {{ categoria.name }}</mat-card-title>
+    <mat-card-subtitle> {{ categoria.slug }} </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Servicios</p>
+    <div class="row">
+      <div *ngFor="let servicio of categoria.services" class="col-xs">
+        <mat-card class="card-servicio">
+          <mat-card-header>
+            <img
+              mat-card-avatar
+              [src]="servicio.icon"
+              [alt]="servicio.alt_icon"
+            />
+            <mat-card-title> ID: {{ servicio.id }} </mat-card-title>
+            <mat-card-subtitle>Name: {{ servicio.name }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <ul>
+              <li>summary: {{ servicio.summary }}</li>
+              <li>Price: {{ servicio.price | currency }}</li>
+              <li> icono 2: <img [src]="servicio.icon_2" alt=""> </li>
+            </ul>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

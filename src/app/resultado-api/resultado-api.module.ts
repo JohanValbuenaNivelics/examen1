@@ -8,10 +8,12 @@ import { MaterialModule } from '@app/material/material.module';
 import { CardsArticlePymesComponent } from './components/cards-article-pymes/cards-article-pymes.component';
 //shared
 import { SharedModule } from '@app/shared/shared.module';
+import { CardCategoriesComponent } from './components/card-categories/card-categories.component';
 @NgModule({
   declarations: [
     ShowResultComponent,
-    CardsArticlePymesComponent
+    CardsArticlePymesComponent,
+    CardCategoriesComponent
   ],
   imports: [
     CommonModule,

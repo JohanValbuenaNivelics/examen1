@@ -1,9 +1,9 @@
 <h1>SERVICIO CONSUMIDO</h1>
 <div class="ng-container">
-    <mat-grid-list *ngIf='resultado$ |async as resultado' cols= 4 rowHeight="350px">
+    <mat-grid-list *ngIf='resultado$ |async as resultado' cols= 4 rowHeight="400px">
 
         <mat-grid-tile [colspan]= 2 [rowspan]= 1>
-            <mat-card  class="mat-style dashboard-card">
+            <mat-card  class="mat-style dashboard-card" >
                 <mat-card-header>
                 <img mat-card-avatar [src]="resultado.result.what_images_test[0].path_file" alt="">
                 <mat-card-title>  {{resultado.result.title_ppal}} </mat-card-title>
@@ -26,7 +26,9 @@
      <mat-grid-tile [colspan]= 1 *ngFor="  let articulo of (resultado|toArticlePymes);  index as i" >
         <app-cards-article-pymes [articulosPymes]= "articulo" [indice]="i" ></app-cards-article-pymes>
      </mat-grid-tile>
-    
+     <mat-grid-tile [colspan]= 4 *ngFor="  let categoria of (resultado|toCategories);  index as i" >
+       <app-card-categories [categoria]='categoria' ></app-card-categories>
+     </mat-grid-tile>
     </mat-grid-list>
 </div>
 
