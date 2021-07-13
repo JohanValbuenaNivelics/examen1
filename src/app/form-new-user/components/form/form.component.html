@@ -1,1 +1,127 @@
 <p>form works!</p>
+<form [formGroup]="form" (ngSubmit)="saveUser($event)">
+  <mat-card>
+    <mat-card-title>Nuevo Usuario</mat-card-title>
+
+    <mat-card-content>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <mat-label>id</mat-label>
+            <input
+              placeholder="Id numerico"
+              formControlName="id"
+              matInput
+              type="text"
+            />
+            <mat-error *ngIf="form.controls.id?.hasError('required')">
+              el campo es requerido
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-xs">
+          <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input
+              placeholder="ej Juanito"
+              formControlName="name"
+              matInput
+              type="text"
+            />
+            <mat-error *ngIf="form.controls.name?.hasError('required')">
+              el campo es requerido
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <mat-label>Empresa</mat-label>
+            <input
+              placeholder="ej Nivelics"
+              formControlName="company"
+              matInput
+              type="text"
+            />
+            <mat-error *ngIf="form.controls.company?.hasError('required')">
+              el campo es requerido
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-xs">
+          <mat-form-field>
+            <mat-label>Pais</mat-label>
+            <mat-select placeholder="Country" formControlName="country"> 
+                <mat-option> esta</mat-option>
+                <mat-option>o esta</mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.controls.country?.hasError('required')">
+              el campo es requerido
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <mat-label>Ciudad</mat-label>
+            <input
+              placeholder="city: Bogota"
+              formControlName="city"
+              matInput
+              type="text"
+            />
+            <mat-error *ngIf="form.controls.city?.hasError('required')">
+              el campo es requerido
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-xs">
+          <mat-form-field>
+            <mat-label>Hobby</mat-label>
+            <input
+              placeholder="ej. ver tv/deportes"
+              formControlName="hobby"
+              matInput
+              type="text"
+            />
+            <mat-error *ngIf="form.controls.hobby?.hasError('required')">
+              el campo es requerido
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <mat-label>Genero</mat-label>
+            <input
+              placeholder="Masculino"
+              formControlName="gender"
+              matInput
+              type="text"
+            />
+            <mat-error *ngIf="form.controls.gender?.hasError('required')">
+              el campo es requerido
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-xs">
+          <mat-form-field>
+            <mat-label>Fecha de nacimiento</mat-label>
+            <input
+              placeholder="00/00/0000"
+              formControlName="date"
+              matInput
+              type="date"
+            />
+            <mat-error *ngIf="form.controls.date?.hasError('required')">
+              el campo es requerido
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

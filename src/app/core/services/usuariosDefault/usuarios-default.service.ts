@@ -20,7 +20,7 @@ export class UsuariosDefaultService {
   {
     id: 2,
     name: 'Yair',
-    company:'NIvelics',
+    company:'independiente',
     country: 'Colombia',
     city:'Bogota',
     hobby:'Ver anime',
@@ -28,7 +28,17 @@ export class UsuariosDefaultService {
     date: new  Date("1994-11-19")
   },
   {
-    id: 2,
+    id: 3,
+    name: 'Niksuro senpai',
+    company:'Nivelics',
+    country: 'Colombia',
+    city:'Bogota',
+    hobby:'Strimear',
+    gender: 'M',
+    date: new  Date("1997-05-05")
+  },
+  {
+    id: 4,
     name: 'Laura',
     company:'Babaria',
     country: 'Colombia',

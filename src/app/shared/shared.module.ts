@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 import { ToArticlePymesPipe } from './pipes/to-articles-pymes/to-article-pymes.pipe';
 import { ToCategoriesPipe } from './pipes/to-categories/to-categories.pipe';
 import { ToTestimoniesPipe } from './pipes/to-testimonies/to-testimonies.pipe';
+// forms
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,17 @@ import { ToTestimoniesPipe } from './pipes/to-testimonies/to-testimonies.pipe';
   imports: [
     CommonModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     HeaderComponent,
     ToArticlePymesPipe,
     ToCategoriesPipe,
-    ToTestimoniesPipe
+    ToTestimoniesPipe,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }
