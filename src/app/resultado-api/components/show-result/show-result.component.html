@@ -1,0 +1,35 @@
+<h1>SERVICIO CONSUMIDO</h1>
+<div class="ng-container">
+    <mat-grid-list *ngIf='resultado$ |async as resultado' cols= 4 rowHeight="350px">
+
+        <mat-grid-tile [colspan]= 2 [rowspan]= 1>
+            <mat-card  class="mat-style dashboard-card">
+                <mat-card-header>
+                <img mat-card-avatar [src]="resultado.result.what_images_test[0].path_file" alt="">
+                <mat-card-title>  {{resultado.result.title_ppal}} </mat-card-title>
+                <mat-card-subtitle> {{resultado.result.test_title}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Descripcion general </p>
+                    <ul>
+                        <li>status: {{resultado.status}} </li>
+                        <li>code: {{resultado.code}} </li>
+                        <li *ngIf="resultado.messages.length ===0">Messages: No hay mensajes</li>
+                        <ul *ngFor="let mensaje of resultado.messages">Messages: {{mensaje}}</ul>
+                    </ul>
+                   
+                </mat-card-content>
+            
+            </mat-card>
+            
+        </mat-grid-tile>
+     <mat-grid-tile [colspan]= 1 *ngFor="  let articulo of (resultado|toArticlePymes);  index as i" >
+        <app-cards-article-pymes [articulosPymes]= "articulo" [indice]="i" ></app-cards-article-pymes>
+     </mat-grid-tile>
+    
+    </mat-grid-list>
+</div>
+
+
+
+

@@ -1,0 +1,13 @@
+<mat-card class='dashboard-card'>
+  <mat-card-title>{{ articulosPymes.name }} {{indice+1}}</mat-card-title>
+  <mat-card-subtitle>{{indice+1}}</mat-card-subtitle>
+<div class="crop-image">
+    <img [src]="articulosPymes.image" alt="imagen alt">
+</div>
+<mat-card-content>
+    <ul>
+        <li>Descripcion: {{articulosPymes.description}}</li>
+        <li>url del articulo: {{articulosPymes.url_article}}</li>
+    </ul>
+</mat-card-content>
+</mat-card>
