@@ -7,12 +7,14 @@ import { MaterialModule } from '@app/material/material.module';
 import { RouterModule } from '@angular/router';
 import { ToArticlePymesPipe } from './pipes/to-articles-pymes/to-article-pymes.pipe';
 import { ToCategoriesPipe } from './pipes/to-categories/to-categories.pipe';
+import { ToTestimoniesPipe } from './pipes/to-testimonies/to-testimonies.pipe';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     ToArticlePymesPipe,
-    ToCategoriesPipe
+    ToCategoriesPipe,
+    ToTestimoniesPipe
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { ToCategoriesPipe } from './pipes/to-categories/to-categories.pipe';
   exports:[
     HeaderComponent,
     ToArticlePymesPipe,
-    ToCategoriesPipe
+    ToCategoriesPipe,
+    ToTestimoniesPipe
   ]
 })
 export class SharedModule { }

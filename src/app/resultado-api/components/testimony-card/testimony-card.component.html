@@ -1,0 +1,24 @@
+<p>testimony-card works!</p>
+<mat-card class="dashboard-card" *ngIf="testimonio.is_visible">
+  <mat-card-header>
+    <img
+      mat-card-avatar
+      clas="img-avatar"
+      [src]="testimonio.image"
+      [alt]="testimonio.alt_image"
+    />
+    <mat-card-title>{{ testimonio.name }}</mat-card-title>
+    <mat-card-subtitle> {{ testimonio.title }} </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      recibi el {{ testimonio.service }} y me dieron el avatar #{{
+        testimonio.image_id
+      }},
+    </p>
+    <img class="img-service"
+      [src]="testimonio.service_image"
+      [alt]="testimonio.service_alt_image"
+    />
+  </mat-card-content>
+</mat-card>

@@ -9,11 +9,13 @@ import { CardsArticlePymesComponent } from './components/cards-article-pymes/car
 //shared
 import { SharedModule } from '@app/shared/shared.module';
 import { CardCategoriesComponent } from './components/card-categories/card-categories.component';
+import { TestimonyCardComponent } from './components/testimony-card/testimony-card.component';
 @NgModule({
   declarations: [
     ShowResultComponent,
     CardsArticlePymesComponent,
-    CardCategoriesComponent
+    CardCategoriesComponent,
+    TestimonyCardComponent
   ],
   imports: [
     CommonModule,

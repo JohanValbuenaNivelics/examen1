@@ -2,7 +2,7 @@
 <div class="ng-container">
     <mat-grid-list *ngIf='resultado$ |async as resultado' cols= 4 rowHeight="400px">
 
-        <mat-grid-tile [colspan]= 2 [rowspan]= 1>
+        <mat-grid-tile [colspan]= 1 [rowspan]= 1>
             <mat-card  class="mat-style dashboard-card" >
                 <mat-card-header>
                 <img mat-card-avatar [src]="resultado.result.what_images_test[0].path_file" alt="">
@@ -26,10 +26,17 @@
      <mat-grid-tile [colspan]= 1 *ngFor="  let articulo of (resultado|toArticlePymes);  index as i" >
         <app-cards-article-pymes [articulosPymes]= "articulo" [indice]="i" ></app-cards-article-pymes>
      </mat-grid-tile>
-     <mat-grid-tile [colspan]= 4 *ngFor="  let categoria of (resultado|toCategories);  index as i" >
+     <mat-grid-tile [colspan]= 1 *ngFor="  let testimonio of (resultado|toTestimonies)" >
+        <app-testimony-card [testimonio]='testimonio' ></app-testimony-card>
+      </mat-grid-tile>
+     <mat-grid-tile [colspan]= 2 *ngFor="  let categoria of (resultado|toCategories);  index as i" >
        <app-card-categories [categoria]='categoria' ></app-card-categories>
      </mat-grid-tile>
+     
+
     </mat-grid-list>
+
+
 </div>
 
 

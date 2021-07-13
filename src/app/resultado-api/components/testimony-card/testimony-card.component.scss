@@ -1,0 +1,21 @@
+
+
+.mat-card-content{
+    align-self: flex-start;
+    
+  height: 70%;
+    
+}
+.mat-focus-indicator{
+    //background-color: crimson;
+    img.img-service{
+        align-self: center;
+        background-color: cornsilk;
+        object-fit: fill;
+        height:  70%;
+    }
+    img.mat-card-avatar{
+        background: white;
+        background-size: cover;
+    }
+}
