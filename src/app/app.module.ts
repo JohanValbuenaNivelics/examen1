@@ -11,7 +11,11 @@ import { CoreModule } from '@core/core.module';
 import { SharedModule } from '@shared/shared.module';
 import { LayoutComponent } from './layout/layout.component';
 
-// modulos
+// modulos fire
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +29,7 @@ import { LayoutComponent } from './layout/layout.component';
     HttpClientModule,
     CoreModule,
     SharedModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]
