@@ -1,4 +1,4 @@
-<<<<<<< HEAD   pagina en firebase: https://examen-d7915.web.app/home
+<<<<<<< HEAD   pagina en firebase: https://examen-d7915.web.app
 # ExamenFrontNivelics
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
