@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "examen-d7915": {
+      "hosting": {
+        "examen-front-nivelics": [
+          "examen-d7915"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "examen-d7915"
+  }
+}

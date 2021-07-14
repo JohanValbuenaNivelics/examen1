@@ -15,6 +15,7 @@ export class FuenteDeUsuariosService {
 
   addLista(newUser: User){
     this.usuarios = [...this.usuarios, newUser];
+   
     // notifica el cambio
     this.lista.next(this.usuarios);
   }

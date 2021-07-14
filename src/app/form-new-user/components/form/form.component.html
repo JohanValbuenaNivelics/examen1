@@ -12,10 +12,15 @@
               placeholder="Id numerico"
               formControlName="id"
               matInput
-              type="text"
+              type="number"
+              maxlength="3"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
             />
             <mat-error *ngIf="form.controls.id?.hasError('required')">
               el campo es requerido
+            </mat-error>
+            <mat-error *ngIf="form.controls.id.hasError('maxlength')">
+              no debe pasar las 3 cifras
             </mat-error>
           </mat-form-field>
         </div>
@@ -30,6 +35,12 @@
             />
             <mat-error *ngIf="form.controls.name?.hasError('required')">
               el campo es requerido
+            </mat-error>
+            <mat-error *ngIf="form.controls.name?.errors?.minlength">
+              debe tener mas letras
+            </mat-error>
+            <mat-error *ngIf="form.controls.name?.errors?.maxlength">
+              debe tener menos de 10 letras
             </mat-error>
           </mat-form-field>
         </div>
@@ -47,13 +58,19 @@
             <mat-error *ngIf="form.controls.company?.hasError('required')">
               el campo es requerido
             </mat-error>
+            <mat-error *ngIf="form.controls.company?.errors?.minlength">
+              debe tener mas letras
+            </mat-error>
+            <mat-error *ngIf="form.controls.company?.errors?.maxlength">
+              debe tener menos de 10 letras
+            </mat-error>
           </mat-form-field>
         </div>
         <div class="col-xs">
           <mat-form-field>
             <mat-label>Pais</mat-label>
             <mat-select placeholder="Country" formControlName="country"> 
-                <mat-option> esta</mat-option>
+                <mat-option *ngFor="let country of countries" [value]="country.name"> {{country.name}} </mat-option>
                 <mat-option>o esta</mat-option>
             </mat-select>
             <mat-error *ngIf="form.controls.country?.hasError('required')">
@@ -75,6 +92,12 @@
             <mat-error *ngIf="form.controls.city?.hasError('required')">
               el campo es requerido
             </mat-error>
+            <mat-error *ngIf="form.controls.city?.errors?.minlength">
+              debe tener mas letras
+            </mat-error>
+            <mat-error *ngIf="form.controls.city?.errors?.maxlength">
+              debe tener menos de 10 letras
+            </mat-error>
           </mat-form-field>
         </div>
         <div class="col-xs">
@@ -89,23 +112,24 @@
             <mat-error *ngIf="form.controls.hobby?.hasError('required')">
               el campo es requerido
             </mat-error>
+            <mat-error *ngIf="form.controls.hobby?.errors?.minlength">
+              debe tener mas letras
+            </mat-error>
+            <mat-error *ngIf="form.controls.hobby?.errors?.maxlength">
+              debe tener menos de 10 letras
+            </mat-error>
           </mat-form-field>
         </div>
       </div>
       <div class="row">
         <div class="col-xs">
-          <mat-form-field>
-            <mat-label>Genero</mat-label>
-            <input
-              placeholder="Masculino"
-              formControlName="gender"
-              matInput
-              type="text"
-            />
-            <mat-error *ngIf="form.controls.gender?.hasError('required')">
-              el campo es requerido
-            </mat-error>
-          </mat-form-field>
+         
+            <mat-radio-group formControlName="gender">
+              <mat-radio-button value="NA">No Indica</mat-radio-button>
+              <mat-radio-button value="M">Masculino</mat-radio-button>
+              <mat-radio-button value="F">Femenino</mat-radio-button>
+            </mat-radio-group>
+           
         </div>
         <div class="col-xs">
           <mat-form-field>
@@ -123,5 +147,8 @@
         </div>
       </div>
     </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button [disabled]='form.invalid' color="primary" type="submit">Submit</button>
+    </mat-card-actions>
   </mat-card>
 </form>
